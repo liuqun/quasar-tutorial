@@ -38,7 +38,7 @@ export function generateMenus() {
       menus.push({
         path,
         title,
-        icon: 'school',
+        icon: 'style',
       });
     } else {
       let parentNode = menus;
@@ -52,13 +52,13 @@ export function generateMenus() {
               ? {
                   path,
                   title: title,
-                  icon: 'school',
+                  icon: 'today',
                 }
               : {
                   path: '/' + key,
                   title: key,
                   children: [],
-                  icon: 'school',
+                  icon: 'menu',
                 };
           parentNode.push(node);
           parentNode = node.children as Menu[];
@@ -68,8 +68,12 @@ export function generateMenus() {
   }
   return menus;
 }
-const menus = generateMenus();
-// console.log('menus', menus);
+
+if (false) {
+  const menus = generateMenus();
+  console.log('menus', menus);
+}
+
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
